@@ -36,102 +36,8 @@ loandata['dti'].describe()
 income = np.exp(loandata['log.annual.inc'])
 loandata['annualincome'] = income
 
-#Working with arrays
-#1D array
-arr = np.array([1, 2, 3, 4])
-
-#0D array
-arr = np.array(43)
-
-#2D array
-arr = np.array([[1, 2, 3], [4, 5, 6]])
-
-#Working with IF statements
-a = 40
-b = 500
-
-if b > a:
-    print('b is greater than a')
-
-#Let's add more conditions
-a = 40
-b = 500
-c = 1000
-
-if b > a and b < c:
-    print('b is greater than a but less than c')
-
-#What if a condition is not met?
-a = 40
-b = 500
-c = 20
-
-if b > a and b < c:
-    print('b is greater than a but less than c')
-else:
-    print('No conditions met')
-
-#another condition different metrics
-a = 40
-b = 500
-c = 30
-
-if b > a and b < c:
-    print('b is greater than a but less than c')
-elif b > a and b > c:
-    print('b is greater than a and c')
-else:
-    print('No conditions met')
-
-
-#Using OR
-a = 40
-b = 500
-c = 30
-
-if b > a or b < c:
-    print('b is greater than a or less than c')
-else:
-    print('No conditions met')
-
-
 #FICO Score
-
-fico = 250
-
-# fico >= 300 and < 400: 'Very Poor'
-# fico >= 400 and ficoscore < 600: 'Poor'
-# fico >= 601 and ficoscore < 660: 'Fair'
-# fico >= 660 and ficoscore < 780: 'Good'
-# fico >=780: 'Excellent'
-
-if fico >= 300 and fico < 400:
-    ficocat = 'Very Poor'
-elif fico >= 400 and fico < 600:
-    ficocat = 'Poor'
-elif fico >= 601 and fico < 660: 
-    ficocat = 'Fair'
-elif fico >= 660 and fico < 780:
-    ficocat = 'Good'
-elif fico >=780:
-    ficocat = 'Excellent'
-else:
-    ficocat = 'Unknown'
-
-print(ficocat)
-
-#for loops
-fruits = ['apple', 'pear', 'banana', 'cherry']
-for x in  fruits:
-    y = x+' fruit'
-    print(y)
-
-for x in range(0, 4):
-    y = fruits[x]+' for sale'
-    print(y)
-
 # applying for loops to loan data
-#using first 10
 length = len(loandata)
 ficocat = []
 for x in range(0,length):
@@ -183,6 +89,7 @@ plt.show()
 
 #writing to csv
 loandata.to_csv('loan_cleaned.csv', index = True)
+
 
 
 
