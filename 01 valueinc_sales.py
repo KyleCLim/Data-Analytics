@@ -15,21 +15,12 @@ data = pd.read_csv('transaction2.csv', sep=';')
 # summary of the data
 data.info()
 
-# Playing around with variables
-var = True
-
-# Definig variables
-CostPerItem = 11.73
-SellingPricePerItem = 21.11
-NumberofItemsPurchased = 6
-
 # Mathematical Operations on Tablue
 ProfitPerItem = SellingPricePerItem - CostPerItem
 ProfitPerTransaction = NumberofItemsPurchased * ProfitPerItem
 SellingPricePerTransaction = NumberofItemsPurchased * SellingPricePerItem
 
 # CostPerTransaction Column Calculation
-
 # CostPerTransaction = CostPerItem * NumberofItemsPurchased
 # variable = dataframe['column_name']
 
@@ -107,6 +98,7 @@ data = data.drop(['Year', 'Month'], axis = 1)
 
 # Export into a csv
 data.to_csv('ValueInc_Cleaned.csv', index = False)
+
 
 
 
